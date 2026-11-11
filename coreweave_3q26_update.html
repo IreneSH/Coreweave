@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoreWeave (CRWV) 2026 Q3 財報更新</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", "Segoe UI", sans-serif;
+    background: #f5f7fa;
+    color: #1e293b;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 24px 16px;
+  }
+  .container { max-width: 1080px; margin: 0 auto; }
+  header {
+    background: linear-gradient(135deg, #e8f0fe 0%, #f0f7ff 100%);
+    border: 1px solid #c3d4ea;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+  header h1 { font-size: 26px; color: #0f2a5c; margin-bottom: 6px; }
+  header .sub { font-size: 14px; color: #33475f; }
+  .kpi-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+  .kpi {
+    background: #ffffff;
+    border: 1px solid #c9d8ec;
+    border-radius: 10px;
+    padding: 12px 18px;
+    flex: 1 1 150px;
+    min-width: 150px;
+  }
+  .kpi .label { font-size: 12.5px; color: #44536b; }
+  .kpi .value { font-size: 20px; font-weight: 700; color: #0f2a5c; margin-top: 2px; }
+  .kpi .delta { font-size: 12.5px; font-weight: 600; }
+  .up { color: #0b6e3a; }
+  .down { color: #b02a2a; }
+
+  section {
+    background: #ffffff;
+    border: 1px solid #d7e0ec;
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 24px;
+  }
+  h2 {
+    font-size: 20px;
+    color: #0f2a5c;
+    border-left: 5px solid #2f6fb7;
+    padding-left: 12px;
+    margin-bottom: 16px;
+  }
+  h3 { font-size: 16.5px; color: #17406e; margin: 20px 0 10px; }
+  h4 { font-size: 14.5px; color: #1e293b; margin: 14px 0 6px; }
+  p { margin-bottom: 10px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 18px;
+    font-size: 13.5px;
+  }
+  th {
+    background: #e3ecf7;
+    color: #0f2a5c;
+    font-weight: 700;
+    padding: 9px 10px;
+    border: 1px solid #c3d4ea;
+    text-align: center;
+    white-space: nowrap;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #d7e0ec;
+    text-align: right;
+    color: #1e293b;
+    background: #ffffff;
+  }
+  td.rowname { text-align: left; font-weight: 600; background: #f4f8fc; color: #16304f; white-space: nowrap; }
+  td.center { text-align: center; }
+  tr:nth-child(even) td { background: #fafcff; }
+  tr:nth-child(even) td.rowname { background: #eef4fb; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .beat { background: #d9f2e3; color: #0b5e33; border: 1px solid #a8dec0; }
+  .miss { background: #fbe0e0; color: #8f1f1f; border: 1px solid #efb9b9; }
+  .inline { background: #e9edf3; color: #3b4a5f; border: 1px solid #ccd6e3; }
+
+  .note {
+    background: #fff8e8;
+    border: 1px solid #ecd9a0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #5a4a14;
+    margin: 10px 0;
+  }
+  .infer { color: #7a4ec4; font-weight: 600; }
+
+  .qa-block {
+    border: 1px solid #d7e0ec;
+    border-left: 5px solid #5a8fd0;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    background: #fbfdff;
+  }
+  .qa-block .theme { font-size: 15.5px; font-weight: 700; color: #17406e; margin-bottom: 6px; }
+  .qa-q { font-weight: 600; color: #513a7a; margin-top: 8px; }
+  .qa-a { margin-top: 4px; }
+  ul { margin: 6px 0 12px 22px; }
+  li { margin-bottom: 6px; }
+  .src { font-size: 12.5px; color: #44536b; margin-top: 6px; }
+  footer { font-size: 12.5px; color: #44536b; text-align: center; padding: 10px 0 30px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>CoreWeave (CRWV) 2026 Q3 財報更新</h1>
+  <div class="sub">財報發布日：2026/11/10（美股盤後）｜法說會：11/10 5pm ET｜股價：US$48.73（11/10 收盤，Citi 報告）｜資料來源：公司法說會逐字稿（Bloomberg）、Barclays First Take、Citi Flash</div>
+  <div class="kpi-row">
+    <div class="kpi"><div class="label">營收（百萬美元）</div><div class="value">3,661</div><div class="delta up">YoY +168%｜高於財測上緣</div></div>
+    <div class="kpi"><div class="label">調整後營業利益（百萬美元）</div><div class="value">379</div><div class="delta up">利益率 10.4%，遠超財測 200–260</div></div>
+    <div class="kpi"><div class="label">調整後 EBITDA（百萬美元）</div><div class="value">2,256</div><div class="delta up">YoY +169%｜QoQ +49%</div></div>
+    <div class="kpi"><div class="label">營收 Backlog（百萬美元）</div><div class="value">132,500</div><div class="delta up">YoY +138%，QoQ 約 +28,000</div></div>
+    <div class="kpi"><div class="label">Active Power</div><div class="value">&gt;1.7 GW</div><div class="delta up">年初至今翻倍；簽約 4.6 GW</div></div>
+  </div>
+  <div class="src" style="margin-top:10px;">金額單位：除特別標註外，均為百萬美元（US$ mn）；EPS 與百分比除外。</div>
+</header>
+
+<!-- ============ 1. 財報數字更新 ============ -->
+<section>
+  <h2>一、財報數字更新（2026 Q3）</h2>
+  <table>
+    <tr>
+      <th style="text-align:left;">項目（金額：百萬美元，除另標註外）</th>
+      <th>3Q25</th>
+      <th>2Q26</th>
+      <th>3Q26</th>
+      <th>QoQ</th>
+      <th>YoY</th>
+    </tr>
+    <tr><td class="rowname">營收</td><td>1,365</td><td>2,575</td><td>3,661</td><td class="up">+42.2%（單季淨增 1,086）</td><td class="up">+168.3%</td></tr>
+    <tr><td class="rowname">GAAP 毛利</td><td>996</td><td>1,696</td><td>2,478</td><td class="up">+46.1%</td><td class="up">+148.8%</td></tr>
+    <tr><td class="rowname">GAAP 毛利率</td><td>73.0%</td><td>65.9%</td><td>67.7%</td><td class="up">+1.8 pts</td><td class="down">-5.3 pts</td></tr>
+    <tr><td class="rowname">GAAP 營業利益</td><td>52</td><td>-49</td><td>207</td><td class="up">轉正（利益率 5.7%）</td><td class="up">+299%</td></tr>
+    <tr><td class="rowname">調整後營業利益</td><td>217</td><td>約 129 *</td><td>379</td><td class="up">近 3 倍（管理層表述）</td><td class="up">+74.5%</td></tr>
+    <tr><td class="rowname">調整後營業利益率</td><td>15.9%</td><td>5%</td><td>10.4%</td><td class="up">+5.4 pts</td><td class="down">-5.5 pts</td></tr>
+    <tr><td class="rowname">調整後 EBITDA</td><td>838</td><td>約 1,514 *</td><td>2,256</td><td class="up">+49%</td><td class="up">+169%</td></tr>
+    <tr><td class="rowname">調整後 EBITDA 利益率</td><td>61.4%</td><td>—</td><td>61.6%</td><td class="center">近 5 季最高</td><td class="up">+0.2 pts</td></tr>
+    <tr><td class="rowname">利息費用</td><td>310</td><td>640</td><td>846</td><td class="down">+32.2%（低於財測 860–940）</td><td class="down">+173%</td></tr>
+    <tr><td class="rowname">GAAP 淨損</td><td>-110</td><td>-626</td><td>-709</td><td class="down">虧損擴大</td><td class="down">虧損擴大</td></tr>
+    <tr><td class="rowname">GAAP EPS（稀釋，美元）</td><td>-0.22</td><td>-1.14</td><td>-1.27</td><td class="down">虧損擴大</td><td class="down">虧損擴大</td></tr>
+    <tr><td class="rowname">調整後淨損</td><td>-41</td><td>約 -568 *</td><td>-529</td><td class="up">虧損收斂</td><td class="down">虧損擴大</td></tr>
+    <tr><td class="rowname">調整後 EPS（美元）</td><td>-0.08</td><td>-1.03</td><td>-0.95</td><td class="up">虧損收斂</td><td class="down">虧損擴大</td></tr>
+    <tr><td class="rowname">營業現金流</td><td>1,689</td><td>679</td><td>1,975</td><td class="up">+190.9%</td><td class="up">+16.9%</td></tr>
+    <tr><td class="rowname">報告 CapEx（現金流量表）</td><td>2,389</td><td>6,422</td><td>9,441</td><td class="center">+47.0%</td><td class="center">+295%</td></tr>
+    <tr><td class="rowname">調整後 CapEx（財測口徑）</td><td>1,850</td><td>—</td><td>14,511</td><td>—</td><td>高於財測上緣（提前交付）</td></tr>
+    <tr><td class="rowname">自由現金流</td><td>-1,590</td><td>-5,743</td><td>-7,466</td><td class="down">流出擴大</td><td class="down">流出擴大</td></tr>
+    <tr><td class="rowname">營收 Backlog</td><td>約 55,700 *</td><td>約 104,500 *</td><td>132,500</td><td class="up">約 +28,000</td><td class="up">+138%</td></tr>
+    <tr><td class="rowname">Active Power（GW）</td><td>—</td><td>約 1.5</td><td>&gt;1.7</td><td class="up">+200 MW 以上</td><td class="center">年初至今翻倍</td></tr>
+    <tr><td class="rowname">簽約 Power（GW）</td><td>—</td><td>約 3.7</td><td>約 4.6</td><td class="up">+900 MW 以上</td><td class="center">海外 &gt;1.3 GW</td></tr>
+    <tr><td class="rowname">現金及約當現金（不含受限）</td><td>1,894</td><td>5,524</td><td>4,122</td><td colspan="2" class="center">公司口徑（含受限現金與有價證券）為 6,500；另有近 5,000 之 DDTL 未動用額度</td></tr>
+  </table>
+  <div class="note">2Q26 各項 GAAP 實際數字（營收、毛利、營業利益、利息費用、淨損、EPS、現金流、CapEx、現金部位）取自 Financial Datasets 之 10-Q 申報資料（2026/8/11 申報）；* 標註者為推算值。</div>
+
+  <h3>GAAP 淨損為什麼擴大（-110 → -709，百萬美元）</h3>
+  <ul>
+    <li><b>利息費用 +536（310 → 846，百萬美元）</b>——最大單一元凶。</li>
+    <li><b>折舊急速放大</b>：年初至今 active power 翻倍，資產一轉入服務就立刻全額起折，但合約營收是逐月認列的，所以部署越快、當期 GAAP 越難看。管理層講的 Hopper 續約「折舊攤完後利潤率更高」就是這件事的另一面。</li>
+    <li><b>有虧損卻還認列所得稅費用</b>：遞延所得稅資產提列評價備抵。去年 3Q25 的虧損 -110 百萬美元其實被一筆約 127 百萬美元的所得稅利益美化過。</li>
+  </ul>
+
+  <h3>營業現金流為什麼低於預期（1,975 vs 共識 2,106，百萬美元）</h3>
+  <ul>
+    <li>2026 年三季 OCF 分別是 2,984 → 679 → 1,975（百萬美元）。波動來源是營運資金，主要是客戶預付款的入帳時點。</li>
+    <li>而未來三個月將收取約 90 億美元預付款與保證金。依 10-Q 申報格式，客戶預付款計入遞延收入（deferred revenue），屬營業活動現金流——1Q26 該科目即貢獻 OCF 575 百萬美元、上半年累計 1,365 百萬美元——故這批現金入帳時將直接推升 4Q26–1Q27 的 OCF。</li>
+  </ul>
+
+  <h3>營運重點（管理層揭露）</h3>
+  <ul>
+    <li><b>定價強勁上行</b>：7 月全產品線（SKU）提價約 25%，季內再提價 10%，Q4 續漲且漲幅超過成本上升。短期合約定價達每 MW 年化 4,000 萬美元以上；4–5 年期新約定價升至每 MW 2,000–2,500 萬美元。Hopper 世代艦隊 Q3 價格 QoQ 上漲 30–50%，且高於原始合約價格。</li>
+    <li><b>舊艦隊續約紅利</b>：2027 年約 13 萬顆、2028 年再約 17 萬顆 GPU 合約到期，以目前價格估算，2027 年續約可帶來接近 40 億美元的年化增量營收，併計 2028 年接近 100 億美元——且無需額外 CapEx（此部分尚未計入 Backlog）。</li>
+    <li><b>資金面</b>：全公司加權平均負債成本 7.9%（YoY -250 bps）；已償還逾 40 億美元之債務。未來三個月將收取約 90 億美元之客戶預付款與保證金，其中逾 30 億美元來自既有（已全額攤還）基礎設施之再簽約。管理層明言：在當前殖利率下，2027 年前不再發行母公司無擔保債；後續 CapEx 以 DDTL（資產層級擔保貸款）為主——即將推出的新 DDTL 預期獲高投資等級評等，殖利率約 7–7.5%，可融資逾 90% 對應 CapEx。2027 年前母公司層級增量募資預期低於 50 億美元。</li>
+    <li><b>客戶多元化</b>：Fortune 500 企業中 10% 已是客戶；今年新客戶過半來自 AI 實驗室與科技業以外；承諾金額逾 1 億美元之客戶數 YoY 增加逾 2.5 倍；金融服務業佔 Backlog 10%。新客戶含 Canva、Substack、Wayve；OpenAI、Jane Street、Perplexity 擴大合作（Citi 整理）。</li>
+    <li><b>產品</b>：託管推論（Managed Inference）平台 booked ARR 已逾 2.5 億美元；Q3 新增雲端客戶中 70% 原為 Forge 客戶；全球首家將 NVIDIA Vera Rubin NVL72 投入生產（客戶 Cognition，token 吞吐量為 GB200 的 4.8 倍，Citi 整理）。</li>
+    <li><b>供需</b>：2027 年底前合格需求為可用產能的 10 倍；2028 年需求亦數倍於已上市產能。CIP（在建工程）由 119 億美元降至 93 億美元，反映大量基礎設施轉入服務。</li>
+  </ul>
+</section>
+
+<!-- ============ 2. Guidance 更新 ============ -->
+<section>
+  <h2>二、Guidance 數字更新</h2>
+
+  <h3>下一季（4Q26）Guidance</h3>
+  <table>
+    <tr>
+      <th style="text-align:left;">項目（金額：百萬美元，除另標註外）</th>
+      <th>4Q26 指引 / 隱含值</th>
+      <th>說明</th>
+    </tr>
+    <tr><td class="rowname">利息費用（公司明示）</td><td class="center">1,050 – 1,150</td><td style="text-align:left;">較 3Q 的 846 續增，反映 DDTL 隨交付提款</td></tr>
+    <tr><td class="rowname">隱含營收（由全年指引倒推）</td><td class="center">4,686 – 4,986</td><td style="text-align:left;">前三季實績合計 8,314（Q1 2,078＋Q2 2,575＋Q3 3,661），以全年指引 13,000–13,300 倒推；隱含 QoQ +28%～+36%</td></tr>
+    <tr><td class="rowname">隱含調整後營業利益（Citi 計算）</td><td class="center">747 – 847</td><td style="text-align:left;">隱含營業利益率約 16.5%（QoQ +約 7 pts、YoY +約 11 pts）</td></tr>
+    <tr><td class="rowname">年底 Active Power</td><td class="center">&gt; 1.85 GW</td><td style="text-align:left;">維持不變</td></tr>
+  </table>
+
+  <h3>全年（FY2026）Guidance（與前次比較）</h3>
+  <table>
+    <tr>
+      <th style="text-align:left;">項目（金額：百萬美元，除另標註外）</th>
+      <th>前次指引</th>
+      <th>本次指引</th>
+      <th>變動</th>
+    </tr>
+    <tr><td class="rowname">營收</td><td class="center">12,400 – 13,200</td><td class="center">13,000 – 13,300</td><td class="up">中點上修約 +2.7%，下緣大幅上修</td></tr>
+    <tr><td class="rowname">調整後營業利益</td><td class="center">中點約 1,050 *</td><td class="center">1,275 – 1,375</td><td class="up">中點對中點 +26%（公司明示）</td></tr>
+    <tr><td class="rowname">CapEx</td><td class="center">35,000 – 39,000</td><td class="center">37,000 – 39,000</td><td class="center">下緣上修（反映提前交付）</td></tr>
+    <tr><td class="rowname">年底 Exit ARR（年化run-rate營收）</td><td class="center">18,500 – 19,500</td><td class="center">20,000 – 21,000</td><td class="up">下緣與中點各上修 1,500（中點 YoY +226%）</td></tr>
+    <tr><td class="rowname">年底 Active Power</td><td class="center">&gt; 1.85 GW</td><td class="center">&gt; 1.85 GW</td><td class="center">不變</td></tr>
+  </table>
+  <div class="note">* 前次調整後營業利益中點由「本次上修幅度中點對中點 +26%」回推 <span class="infer">(我的推論)</span>；前次 Exit ARR 區間取自 Citi 所述「下緣與中點各上修 15 億美元」之回推。</div>
+
+  <h4>中期展望（管理層質性指引）</h4>
+  <ul>
+    <li>2027 年調整後淨損將「大幅收斂」；<b>2028 上半年與 2028 全年轉為調整後淨利為正</b>。</li>
+    <li>2027 年 EBITDA 減利息（不含預付款貢獻）將<b>倍增以上</b>，提升內部資金自給能力。</li>
+    <li>若僅聚焦既有已簽約 Backlog，2027 年 CapEx 可維持與 2026 年相當，而營收與 EBITDA 仍大幅成長；並有信心「明顯超越」2027 年 ARR 目標。</li>
+  </ul>
+</section>
+
+<!-- ============ 3. 與市場預期比較 ============ -->
+<section>
+  <h2>三、與市場預期比較</h2>
+  <table>
+    <tr>
+      <th style="text-align:left;">項目（金額：百萬美元，除另標註外）</th>
+      <th>3Q26 實際</th>
+      <th>市場共識</th>
+      <th>差異</th>
+      <th>判定</th>
+    </tr>
+    <tr><td class="rowname">營收</td><td>3,661</td><td>3,555</td><td class="up">+3.0%</td><td class="center"><span class="badge beat">Beat</span></td></tr>
+    <tr><td class="rowname">GAAP 毛利</td><td>2,478</td><td>2,383</td><td class="up">+4.0%</td><td class="center"><span class="badge beat">Beat</span></td></tr>
+    <tr><td class="rowname">調整後 EBITDA</td><td>2,256</td><td>2,050</td><td class="up">+10.0%</td><td class="center"><span class="badge beat">Beat</span></td></tr>
+    <tr><td class="rowname">調整後營業利益</td><td>379</td><td>246</td><td class="up">+54.2%</td><td class="center"><span class="badge beat">大幅 Beat</span></td></tr>
+    <tr><td class="rowname">調整後 EPS（美元）</td><td>-0.95</td><td>-1.20（Citi 估 -1.18）</td><td class="up">虧損小於預期</td><td class="center"><span class="badge beat">Beat</span></td></tr>
+    <tr><td class="rowname">營業現金流</td><td>1,975</td><td>2,106</td><td class="down">-6.2%</td><td class="center"><span class="badge miss">Miss</span></td></tr>
+    <tr><td class="rowname">調整後 CapEx</td><td>14,511</td><td>12,343</td><td>+17.6%</td><td class="center"><span class="badge inline">高於預期（交付提前，偏正面解讀）</span></td></tr>
+    <tr><td class="rowname">自由現金流</td><td>-7,466</td><td>-9,421</td><td class="up">流出小於共識（惟大於 Barclays 估 -4,888）</td><td class="center"><span class="badge inline">混合</span></td></tr>
+    <tr><td class="rowname">利息費用</td><td>846</td><td>財測 860 – 940</td><td class="up">低於指引區間</td><td class="center"><span class="badge beat">優於指引</span></td></tr>
+    <tr><td class="rowname">營收 Backlog</td><td>132,500</td><td>—</td><td>QoQ +約 28,000，大致等於 Q3 初已公告之逾 25,000 新約</td><td class="center"><span class="badge inline">In-line</span></td></tr>
+  </table>
+
+  <div class="note">補充（Financial Datasets 8-K 口徑）：以 GAAP 基準看，營收 36.6 億美元優於其共識 34.7 億美元（beat 5.4%），但 <b>GAAP EPS -1.27 低於其共識 -0.94</b>——部分數據商畫面會顯示「EPS miss」，與券商聚焦的調整後 EPS beat（-0.95 vs -1.18/-1.20）並不矛盾，差異主要來自 SBC 與相關調整項。</div>
+
+  <h4>Guidance vs 市場預期</h4>
+  <table>
+    <tr>
+      <th style="text-align:left;">項目（金額：百萬美元，除另標註外）</th>
+      <th>新指引</th>
+      <th>Citi / 市場預期</th>
+      <th>判定</th>
+    </tr>
+    <tr><td class="rowname">FY26 Exit ARR</td><td class="center">20,000 – 21,000</td><td class="center">Citi 19,300 / Street 19,000</td><td class="center"><span class="badge beat">高於預期</span></td></tr>
+    <tr><td class="rowname">FY26 調整後營業利益</td><td class="center">1,275 – 1,375</td><td class="center">Citi 1,110 / Street 1,080</td><td class="center"><span class="badge beat">高於預期</span></td></tr>
+    <tr><td class="rowname">4Q26 隱含營業利益率</td><td class="center">約 16.5%</td><td class="center">Citi 14.7% / Street 14.6%</td><td class="center"><span class="badge beat">高於賣方與買方預期上緣</span></td></tr>
+  </table>
+
+  <h4>券商觀點摘要（供參考之兩份報告）</h4>
+  <ul>
+    <li><b>Barclays（Raimo Lenschow）— Equal Weight，目標價 US$105</b>：本季營收超出共識 3%（上季僅 0.5%），屬正面訊號。近幾週股價承壓主因融資疑慮，Q3 健康的數字與指引上修雖未直接回答融資問題，但足以穩定投資人情緒，短線看漲。簽約電力淨增約 900 MW 顯示建置進度良好。</li>
+    <li><b>Citi（Tyler Radke）— Buy / High Risk，目標價 US$128</b>：在融資／資料中心逆風下，公司「把可控的事情做好」，營收、產能、定價、獲利全面優於預期；全年上修幅度大於本季 beat 幅度，4Q 隱含營業利益率約 16.5% 令人印象深刻。Backlog 成長溫和（約與已公告交易相符），可能反映公司更重視融資／預付款。90 億美元預付款是重要正面訊號，需求能見度提升有助緩解融資成本疑慮，預期股價溫和上漲。</li>
+  </ul>
+</section>
+
+<!-- ============ 4. Earnings Call 整理 ============ -->
+<section>
+  <h2>四、Earnings Call 整理</h2>
+
+  <h3>（一）管理層開場陳述（依主題）</h3>
+
+  <h4>1. 本季成果總覽（CEO Mike Intrator）</h4>
+  <ul>
+    <li>營收 36.6 億美元（YoY +168%）超越財測上緣，單季淨增逾 10 億美元；調整後營業利益 3.79 億美元遠高於 2.0–2.6 億美元指引，利益率提前一季達到低雙位數（Q1 約 1% → Q2 5% → Q3 逾 10%）。</li>
+    <li>Backlog 約 1,325 億美元；Active power 逾 1.7 GW，年初至今翻倍。最新簽訂的合約是公司史上獲利能力最佳的一批；原始艦隊以高於原價的溢價再簽約。</li>
+  </ul>
+
+  <h4>2. 融資策略與資本結構（CEO / CFO 均重點著墨）</h4>
+  <ul>
+    <li>核心原則：每個決策都尋求「最適經濟選擇」——如何籌資、如何定價、建置多快。全公司加權平均負債成本 7.9%（YoY -250 bps）。</li>
+    <li><b>明確表態：在當前殖利率下，不會也不需要再用無擔保債市場籌資（至 2027）</b>。剩餘 Backlog 所需 CapEx 大多數以對應特定客戶合約的 DDTL 融資：可融資 70–100% 對應 CapEx，IPO 以來定價 SOFR+225～550 bps（投資級客戶在窄端、AI 實驗室在寬端），依目前利率高端亦低於 10%。</li>
+    <li>即將推出新 DDTL：多家評等機構示意高投資等級，預期殖利率約 7–7.5%，融資逾 90% 對應 CapEx。2027 年前逾 75% 已承諾 CapEx 綁定投資級與企業客戶。</li>
+    <li>已透過 DDTL 機制償還逾 40 億美元債務（含兩筆最貴早期貸款近半）。合約走完時債務還清、資產歸公司所有——已還清艦隊成為新資本來源，降低成長的資本密集度。</li>
+    <li>預付款趨於有利：今年 70% 交易收取預付款，部分客戶預付合約價值至 100%；未來三個月收取約 90 億美元預付款與保證金（含逾 30 億美元來自已還清既有基礎設施之再簽約，無需任何債務服務）。另以 OEM 融資支應短期機會。2027 年前母公司層級增量募資低於 50 億美元。</li>
+    <li>CFO 重申：既有客戶合約之合約現金流，足以償付目前所有未償債務及為交付這些合約尚需舉借之債務（含資產層級擔保債與母公司無擔保債）——且尚未計入續約。</li>
+  </ul>
+
+  <h4>3. 定價環境與艦隊續約經濟（CEO）</h4>
+  <ul>
+    <li>7 月全 SKU 提價約 25%，季內再 +10%，Q4 續漲，漲幅超過成本上升。短期合約售價逾每 MW 年化 4,000 萬美元；新基礎設施 4–5 年約定價每 MW 2,000–2,500 萬美元。</li>
+    <li>Hopper 艦隊 Q3 價格 QoQ +30～50%，高於原始合約價；多年期續約期限超過 GPU 折舊年限，後期（折舊攤完後）利潤率更高。</li>
+    <li>2027 年 13 萬顆、2028 年 17 萬顆 GPU 到期釋出，已有強勁客戶管線競逐。以現價估算，2027 年續約年化增量營收接近 40 億美元、併計 2028 年接近 100 億美元，全數無需新增 CapEx。</li>
+    <li>若產業資料中心建置放緩，裝機算力更稀缺、GPU 價格可能更久維持高檔——屆時「先到者」最有利；但公司計畫並不建立在該情境上，而是建立在合約需求與 success-based CapEx 之上。</li>
+  </ul>
+
+  <h4>4. 平台、產品與客戶（CEO）</h4>
+  <ul>
+    <li>9 月推出 CoreWeave Forge 整合 AI 開發能力；Q3 新增雲端客戶 70% 原為 Forge 用戶，為切入企業客戶之入口。</li>
+    <li>客戶案例：Wayve（自駕世界模型訓練）、Chan Zuckerberg Initiative（計算生物）、Hippocratic AI（醫療照護溝通代理）、Nissan 與 Aston Martin Aramco F1（工程模擬）、MasterClass（教學代理評估）。</li>
+    <li>今年新客戶過半來自 AI 實驗室／科技業以外；Fortune 500 的 10% 已是客戶；承諾逾 1 億美元之組織數 YoY +2.5 倍以上。</li>
+    <li>2027 年底前合格需求達可用產能 10 倍；2028 年需求在未正式開賣前已數倍於可用產能。</li>
+  </ul>
+
+  <h4>5. 產能與國際布局（CEO）</h4>
+  <ul>
+    <li>Active power 逾 1.7 GW，年底前仍預期逾 1.85 GW；以完整核准場址之施工進度看，2027 年交付無重大風險。</li>
+    <li>簽約電力 4.6 GW 中逾 1.3 GW 在美國以外（加拿大、歐洲、亞洲）；Q3 進入印尼與印度，擴大丹麥、西班牙布局；全球 AI backbone 連結各區域基礎設施。</li>
+  </ul>
+
+  <h4>6. 財務細節（CFO Nitin Agrawal）</h4>
+  <ul>
+    <li>本季三大驅動：(1) 簽約電力快速轉化為活躍電力與創收產能；(2) 需求與定價環境走強，彈性配置產能至溢價短約；(3) 平台採用廣化深化，客戶整併更多 AI 支出至 CoreWeave。託管推論平台 booked ARR 已逾 2.5 億美元，成長主要受限於分配給它的產能。</li>
+    <li>營業費用 35 億美元（含 SBC 1.6 億美元）；調整後 EBITDA 22.56 億美元（利益率 62%，近五季最高）；營業現金流 19.75 億美元；淨損 7.09 億美元（利息費用 8.46 億美元為主因，vs 去年 3.1 億美元）；因遞延所得稅資產評價備抵認列所得稅費用，稅率全年大致一致。</li>
+    <li>CapEx 145.1 億美元超出指引上緣，係將部分 Q4 交付提前；CIP 由 119 億美元降至 93 億美元。年初至今上線逾 850 MW。</li>
+    <li>資產負債表：現金等 65 億美元；DDTL 未動用額度近 50 億美元；逾 90 億美元之所需基礎設施已在帳上 CIP 待轉入服務。</li>
+    <li>CoreWeave Omni：將平台延伸至第三方自有基礎設施、以顯著更低資本密集度變現增量需求，已簽首家客戶。</li>
+    <li>2027 年保有執行彈性：僅在需求穩固、融資條件有吸引力、報酬達門檻處投放資本；若僅聚焦既有 Backlog，2027 CapEx 可與 2026 持平而營收/EBITDA 仍大增，且不影響交付承諾與「明顯超越」2027 ARR 目標之能力。</li>
+  </ul>
+
+  <h3>（二）Q&amp;A 整理（依主題彙整，未遺漏任何提問）</h3>
+
+  <div class="qa-block">
+    <div class="theme">主題一：產業供需與超供情境</div>
+    <div class="qa-q">Q（Goldman Sachs, Gabriela Borges）：未來 1–2 年產業有大量新供給上線、需求演算法能見度不完美，若產業進入供需正常化或超供，對 CoreWeave 模式的影響？</div>
+    <div class="qa-a">A（CEO）：「供給快於需求」的論點已存在多年，但實際上算力需求成長持續快於基礎設施交付能力，且體現在每一張新合約的利潤率擴張上。公司 2027 年基本售罄；2028 年尚未全面開賣，但凡已推向市場的產能皆已售出。公司甚至刻意不把所有產能賣給排隊中的現有買家，選擇「等產能更成熟再上市」以取得更佳經濟效益。<br>A（CFO）補充：需求正轉化為定價權——長約每 MW 2,000–2,500 萬美元、短約最高每 MW 4,000 萬美元。</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="theme">主題二：簽約價格與成本的時間差風險管理</div>
+    <div class="qa-q">Q（Goldman Sachs, Borges 追問）：已簽約的 MW 變現價格鎖定後，到實際上線前成本可能上漲，如何管理此時間差？</div>
+    <div class="qa-a">A（CFO）：CapEx 是 success-based——簽客戶合約的同時即下對應採購單（PO）鎖定成本；且簽約時已確定該合約落地的資料中心，對其建置與營運成本了然於胸，確保經濟性在簽約到部署期間「相對鎖定」。</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="theme">主題三：信用市場疑慮與 2027 之後的簽約策略</div>
+    <div class="qa-q">Q（Deutsche Bank, Brad Zelnick）：近期產業信用市場疑慮，是否影響 2027 之後新產能的簽約方式（時間到電力、客戶類型、年期、融資安排）？</div>
+    <div class="qa-a">A（CEO）：2028 產能尚未全面上市，正是在等市場「進一步成熟」。公司透過多個槓桿與需求訊號保持同步，不會在電力鎖定上走得太前面；廣泛多元的客戶群（AI 實驗室、機器人、S&amp;P 500 企業）帶來極準確的需求資訊流，據以決定電力合約的進場節奏。</div>
+    <div class="qa-q">Q（Zelnick 追問）：部分體質較弱的 AI 雲出現陣痛，是否帶來客戶整併或定價權的機會？</div>
+    <div class="qa-a">A（CEO）：公司已達規模化，有利於在市場波動中取得優勢。AI 雲 = 軟體層 + 基礎設施：公司自認軟體層「可能是市場最佳」，基礎設施則是規模遊戲。兩者兼備使公司能「挑選客戶」，選擇性地決定與誰合作。</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="theme">主題四：利潤率上行的驅動拆解</div>
+    <div class="qa-q">Q（JPMorgan, Samik Chatterjee）：本季與下季指引的利潤率上行，短約的貢獻 vs 執行面（提前交付）各占多少？</div>
+    <div class="qa-a">A（CFO）：三個向量共同貢獻——強執行、有利的需求與定價環境、銷售溢價產品的能力，且預期近期持續。<br>A（CEO）：長約帶來穩定、短約帶來利潤率增益、託管推論等服務帶來附加價值，三者皆快速成長；短約與託管推論的量能，正是建立在長約撐起的規模之上。公司將持續在三大機會向量間動態配置珍貴的基礎設施。</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="theme">主題五：選後監管環境與國際布局</div>
+    <div class="qa-q">Q（JPMorgan, Chatterjee 追問）：美國大選後監管壓力的疑慮，對 2030 年 8 GW 長期規劃的影響？國際擴張扮演什麼角色？</div>
+    <div class="qa-a">A（CEO）：<b>不預期「監管地震」帶來影響</b>——Backlog 對應資料中心的許可與施工狀態令公司對管線很放心。新政治現實是對「如何建設」的表態，公司一向提早進入社區、負責任地建設，視之為持續擴張的機會。國際上已有逾 1.3 GW 美國以外簽約電力（印尼、印度、西班牙、丹麥、加拿大等），在歡迎公司進駐的社區建立多元化基礎設施組合。</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="theme">主題六：客戶多元化與 Backlog 組成</div>
+    <div class="qa-q">Q（UBS, Karl Keirstead）：前沿實驗室表態要自租自建算力，CoreWeave 如何因應？增量產能配置給非實驗室（企業）客戶的節奏？Q3 Backlog 成長的客戶組成？</div>
+    <div class="qa-a">A（CEO）：多元化是一貫核心——Fortune 500 的 10% 是客戶、金融服務占 Backlog 10%、今年新客戶過半非 AI 圈。與 AI 實驗室、超大規模雲、社群媒體公司維持長期關係的同時，全公司優先建設企業客戶長尾。<br>A（CFO）：Forge 是切入企業市場的利器——Q3 新增雲端客戶 70% 原為 Forge 用戶，是企業開始部署基礎設施的起點。</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="theme">主題七：德州政治風險</div>
+    <div class="qa-q">Q（Melius, Ben Reitzes）：致函德州新任州長當選人的結果？在德州的曝險？「不見延遲」的信心從何而來？</div>
+    <div class="qa-a">A（CEO）：德州絕大多數電力「已上線或已完整取得許可並在施工中」，這是不預期 Backlog 資料中心受影響的根據。致函屬與新任官員建立關係的常規做法：表明公司屬無黨派、是良好營運者，願與州府及地主社區合作。</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="theme">主題八：Vera Rubin 進度與對指引的貢獻</div>
+    <div class="qa-q">Q（Melius, Reitzes 追問）：是否已收到並開始放量 Vera Rubin 與 CPU 機櫃？對本次上修指引與明年 ARR 的重要性？</div>
+    <div class="qa-a">A（CEO）：CoreWeave 是全球第一家將 Vera Rubin 上線的雲，首位生產客戶為 Cognition；亦看好獨立部署 Vera CPU 的機會，將是未來數年建設的重要部分。<br>A（CFO）：本季表現與上修指引仍由三向量驅動（簽約電力轉化、需求定價走強、平台採用擴大），未單獨歸因於 Vera Rubin。</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="theme">主題九：短約 vs 長約的報酬比較與產能配置上限</div>
+    <div class="qa-q">Q（Evercore ISI, Amit Daryanani）：短約每 MW 4,000 萬美元 vs 長約 2,000–2,500 萬美元，在同等硬體利用率下、扣除融資成本後的報酬差異？短約占產能的舒適上限？</div>
+    <div class="qa-a">A（CFO）：逐案評估報酬、融資成本與各向量需求環境後內部配置產能。<b>短約回收 CapEx 約 6–18 個月；長約以現價約 1–2 年回收硬體 CapEx</b>。<br>A（CEO）：2027／2028 到期的 13 萬／17 萬顆 GPU 届時已全額攤還（DDTL 設計使然），是投入短約變現的絕佳標的，對現金流有實質意義。</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="theme">主題十：續約增量營收（4,000 / 10,000）之性質釐清</div>
+    <div class="qa-q">Q（Evercore, Daryanani 追問）：2027 年 40 億美元、2028 年 100 億美元的續約增量，是總營收貢獻還是增幅？是已續約還是預期？</div>
+    <div class="qa-a">A（CFO）：該數字<b>在現有 Backlog 之外</b>（Backlog 僅含今日已簽約產能）——是以目前價格水準估算、對應已部署且無需增量 CapEx 基礎設施的可取得年化營收（ARR）機會。並再次強調：未來三個月 90 億美元預付款中逾 30 億美元屬已全額攤還之既有基礎設施再簽約，完全無需債務服務。</div>
+  </div>
+
+  <h3>（三）總結要點</h3>
+  <ul>
+    <li><b>多頭論據</b>：營收／利潤率全面超預期且提前一季達標雙位數營業利益率；定價權強勁（提價 25%+10% 且 Q4 續漲）；續約經濟極佳（2027–28 近 100 億美元年化增量營收、零增量 CapEx）；融資路徑明確去風險化（不碰高價無擔保債、DDTL 7–7.5%、90 億美元預付款、母公司增量募資低於 50 億美元）；2028 年轉虧為盈時點首次明確。</li>
+    <li><b>空方／觀察點</b>：利息費用持續攀升（Q4 指引 10.5–11.5 億美元）；GAAP 淨損擴大至 7.09 億美元；FCF 流出 74.7 億美元；Backlog 增量大致僅等於已公告交易（新簽動能放緩的可能訊號）；營業現金流低於共識；客戶集中度與高負債仍是兩家券商共同強調的風險。</li>
+    <li>兩份券商報告的共同結論：本季是「把可控因素執行到位」的一季，應能穩定近幾週因融資疑慮重挫的投資人情緒（股價自 8 月的約 90 美元跌至約 49 美元）。</li>
+  </ul>
+</section>
+
+<footer>
+  資料來源：CoreWeave 3Q26 Earnings Call 逐字稿（Bloomberg, 2026/11/10）、Barclays「First Take – Strong Q3 Should Steady Investor Sentiment」（2026/11/10）、Citi「Executing on the Controllable」（2026/11/10）、Financial Datasets（CRWV 10-Q／8-K 申報數據）。金額單位除另註明外均為百萬美元。本檔僅供內部研究參考。
+</footer>
+
+</div>
+</body>
+</html>
