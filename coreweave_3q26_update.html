@@ -122,6 +122,38 @@
   li { margin-bottom: 6px; }
   .src { font-size: 12.5px; color: #44536b; margin-top: 6px; }
   footer { font-size: 12.5px; color: #44536b; text-align: center; padding: 10px 0 30px; }
+
+  /* --- 響應式：表格橫向滑動容器 --- */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 12px 0 18px;
+    border-radius: 6px;
+  }
+  .table-wrap table { margin: 0; }
+  /* 首欄固定，橫向滑動時仍可對照項目名稱 */
+  .table-wrap td.rowname,
+  .table-wrap tr th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    box-shadow: 2px 0 4px rgba(15,42,92,.08);
+  }
+  @media (max-width: 680px) {
+    body { font-size: 14px; padding: 12px 8px; }
+    header { padding: 18px 16px; border-radius: 10px; }
+    header h1 { font-size: 20px; }
+    header .sub { font-size: 12.5px; }
+    section { padding: 16px 14px; border-radius: 10px; }
+    h2 { font-size: 17.5px; }
+    h3 { font-size: 15.5px; }
+    table { font-size: 12.5px; }
+    th, td { padding: 7px 8px; }
+    .kpi { flex: 1 1 44%; min-width: 130px; padding: 10px 12px; }
+    .kpi .value { font-size: 17px; }
+    .qa-block { padding: 12px 12px; }
+    ul { margin-left: 18px; }
+  }
 </style>
 </head>
 <body>
@@ -143,7 +175,7 @@
 <!-- ============ 1. 財報數字更新 ============ -->
 <section>
   <h2>一、財報數字更新（2026 Q3）</h2>
-  <table>
+  <div class="table-wrap"><table>
     <tr>
       <th style="text-align:left;">項目（金額：百萬美元，除另標註外）</th>
       <th>3Q25</th>
@@ -173,7 +205,7 @@
     <tr><td class="rowname">Active Power（GW）</td><td>—</td><td>約 1.5</td><td>&gt;1.7</td><td class="up">+200 MW 以上</td><td class="center">年初至今翻倍</td></tr>
     <tr><td class="rowname">簽約 Power（GW）</td><td>—</td><td>約 3.7</td><td>約 4.6</td><td class="up">+900 MW 以上</td><td class="center">海外 &gt;1.3 GW</td></tr>
     <tr><td class="rowname">現金及約當現金（不含受限）</td><td>1,894</td><td>5,524</td><td>4,122</td><td colspan="2" class="center">公司口徑（含受限現金與有價證券）為 6,500；另有近 5,000 之 DDTL 未動用額度</td></tr>
-  </table>
+  </table></div>
   <div class="note">2Q26 各項 GAAP 實際數字（營收、毛利、營業利益、利息費用、淨損、EPS、現金流、CapEx、現金部位）取自 Financial Datasets 之 10-Q 申報資料（2026/8/11 申報）；* 標註者為推算值。</div>
 
   <h3>GAAP 淨損為什麼擴大（-110 → -709，百萬美元）</h3>
@@ -205,7 +237,7 @@
   <h2>二、Guidance 數字更新</h2>
 
   <h3>下一季（4Q26）Guidance</h3>
-  <table>
+  <div class="table-wrap"><table>
     <tr>
       <th style="text-align:left;">項目（金額：百萬美元，除另標註外）</th>
       <th>4Q26 指引 / 隱含值</th>
@@ -215,10 +247,10 @@
     <tr><td class="rowname">隱含營收（由全年指引倒推）</td><td class="center">4,686 – 4,986</td><td style="text-align:left;">前三季實績合計 8,314（Q1 2,078＋Q2 2,575＋Q3 3,661），以全年指引 13,000–13,300 倒推；隱含 QoQ +28%～+36%</td></tr>
     <tr><td class="rowname">隱含調整後營業利益（Citi 計算）</td><td class="center">747 – 847</td><td style="text-align:left;">隱含營業利益率約 16.5%（QoQ +約 7 pts、YoY +約 11 pts）</td></tr>
     <tr><td class="rowname">年底 Active Power</td><td class="center">&gt; 1.85 GW</td><td style="text-align:left;">維持不變</td></tr>
-  </table>
+  </table></div>
 
   <h3>全年（FY2026）Guidance（與前次比較）</h3>
-  <table>
+  <div class="table-wrap"><table>
     <tr>
       <th style="text-align:left;">項目（金額：百萬美元，除另標註外）</th>
       <th>前次指引</th>
@@ -230,7 +262,7 @@
     <tr><td class="rowname">CapEx</td><td class="center">35,000 – 39,000</td><td class="center">37,000 – 39,000</td><td class="center">下緣上修（反映提前交付）</td></tr>
     <tr><td class="rowname">年底 Exit ARR（年化run-rate營收）</td><td class="center">18,500 – 19,500</td><td class="center">20,000 – 21,000</td><td class="up">下緣與中點各上修 1,500（中點 YoY +226%）</td></tr>
     <tr><td class="rowname">年底 Active Power</td><td class="center">&gt; 1.85 GW</td><td class="center">&gt; 1.85 GW</td><td class="center">不變</td></tr>
-  </table>
+  </table></div>
   <div class="note">* 前次調整後營業利益中點由「本次上修幅度中點對中點 +26%」回推 <span class="infer">(我的推論)</span>；前次 Exit ARR 區間取自 Citi 所述「下緣與中點各上修 15 億美元」之回推。</div>
 
   <h4>中期展望（管理層質性指引）</h4>
@@ -244,7 +276,7 @@
 <!-- ============ 3. 與市場預期比較 ============ -->
 <section>
   <h2>三、與市場預期比較</h2>
-  <table>
+  <div class="table-wrap"><table>
     <tr>
       <th style="text-align:left;">項目（金額：百萬美元，除另標註外）</th>
       <th>3Q26 實際</th>
@@ -262,12 +294,12 @@
     <tr><td class="rowname">自由現金流</td><td>-7,466</td><td>-9,421</td><td class="up">流出小於共識（惟大於 Barclays 估 -4,888）</td><td class="center"><span class="badge inline">混合</span></td></tr>
     <tr><td class="rowname">利息費用</td><td>846</td><td>財測 860 – 940</td><td class="up">低於指引區間</td><td class="center"><span class="badge beat">優於指引</span></td></tr>
     <tr><td class="rowname">營收 Backlog</td><td>132,500</td><td>—</td><td>QoQ +約 28,000，大致等於 Q3 初已公告之逾 25,000 新約</td><td class="center"><span class="badge inline">In-line</span></td></tr>
-  </table>
+  </table></div>
 
   <div class="note">補充（Financial Datasets 8-K 口徑）：以 GAAP 基準看，營收 36.6 億美元優於其共識 34.7 億美元（beat 5.4%），但 <b>GAAP EPS -1.27 低於其共識 -0.94</b>——部分數據商畫面會顯示「EPS miss」，與券商聚焦的調整後 EPS beat（-0.95 vs -1.18/-1.20）並不矛盾，差異主要來自 SBC 與相關調整項。</div>
 
   <h4>Guidance vs 市場預期</h4>
-  <table>
+  <div class="table-wrap"><table>
     <tr>
       <th style="text-align:left;">項目（金額：百萬美元，除另標註外）</th>
       <th>新指引</th>
@@ -277,7 +309,7 @@
     <tr><td class="rowname">FY26 Exit ARR</td><td class="center">20,000 – 21,000</td><td class="center">Citi 19,300 / Street 19,000</td><td class="center"><span class="badge beat">高於預期</span></td></tr>
     <tr><td class="rowname">FY26 調整後營業利益</td><td class="center">1,275 – 1,375</td><td class="center">Citi 1,110 / Street 1,080</td><td class="center"><span class="badge beat">高於預期</span></td></tr>
     <tr><td class="rowname">4Q26 隱含營業利益率</td><td class="center">約 16.5%</td><td class="center">Citi 14.7% / Street 14.6%</td><td class="center"><span class="badge beat">高於賣方與買方預期上緣</span></td></tr>
-  </table>
+  </table></div>
 
   <h4>券商觀點摘要（供參考之兩份報告）</h4>
   <ul>
